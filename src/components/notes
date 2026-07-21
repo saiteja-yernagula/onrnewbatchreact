@@ -1,0 +1,69 @@
+React
+React is a open source javascript library which is used to build
+single page application
+
+react features
+1) virtual dom- a copy of real dom - which compares changes by 
+diffing algorithm and update the part of the content and the
+entire process is called reconcialiation
+2) component based architecture
+3) single page application
+
+
+props
+props are read only inputs which is used to pass the data to the child
+it is an object
+
+
+
+react rerenders only when the state changes
+state -
+it is like a variable used to store the data or manage the
+dynamic nature of a component
+
+hooks
+hooks built in function used to perform react implementations
+
+1) useState hook
+it is used to manage the state
+import {useState} from 'react'
+
+const [count,setCount]=useState(0)
+count---it is a state name
+setCount----it is a function used to change the state value
+        setCount('newvalue')
+useState(0)-
+hook(initialvalue)
+
+2) useEffect
+useEffect is a hook that is used to manage sideeeffects like
+api calling, settimeout,setinterval and localstorage in a component
+
+import {useEffect} from 'react'
+
+
+1) useEffect with no dependencies - it will run everytime
+useEffect(()=>{
+        console.log('api calling')
+})
+above return
+
+2) useEffect with empty dependency array- it will only one time
+useEffect(()=>{
+        console.log('api calling')
+},[])
+
+3) useEffect with dependecny array- it will run one time first time
+and run again only when dependency value changes
+useEffect(()=>{
+        console.log('api calling')
+},[apicount])
+
+
+
+map
+it is used for rendering a list
+it is used to render the ui elements
+
+key
+it is used to provide unique identity for every rendered UI element
