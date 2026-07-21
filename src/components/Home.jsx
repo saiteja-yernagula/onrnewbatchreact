@@ -1,6 +1,6 @@
 import { useState,useEffect } from "react"
 import Doctorcard from "./Doctorcard";
-function Home() {
+function Home({newdoctor}) {
     let [doctors,setDoctors]=useState([])
     function fetchdata(){
          let data = [
@@ -31,18 +31,28 @@ function Home() {
         salary: 5000000,
       },
     ];
+  
     setDoctors(data)
     }
     useEffect(()=>{
       fetchdata()
     },[])
+
+    useEffect(()=>{
+        if(newdoctor){
+           setDoctors((prev)=>[...prev,newdoctor])
+        }
+    },[newdoctor])
+    
   return (
     <div className='doctorcontainer'>
-       {doctors.map((doctor)=>{
+       {doctors.length>0? (
+        doctors.map((doctor)=>{
         return (
             <Doctorcard key={doctor.id} name={doctor.name} gender={doctor.gender} specialization={doctor.specialization}/>
         )
-       })}
+       })
+       ):<h1>Loading......</h1>}
     </div>
   )
 }

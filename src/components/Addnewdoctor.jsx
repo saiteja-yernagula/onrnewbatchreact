@@ -7,11 +7,12 @@ function Addnewdoctor() {
     let [specialization,setSpecialization]=useState('')
     let [salary,setSalary]=useState('')
     
-   
+   let [newdoctor,setNewdoctor]=useState(null)
     function handleform(e){
         e.preventDefault()
-        let formdetails={name,age,gender,specialization,salary}
-        console.log(formdetails)
+        let formdetails={id:Date.now(),name,age,gender,specialization,salary}
+       setNewdoctor(formdetails)
+
         setName('')
         setGender('')
         setSpecialization('')
@@ -34,7 +35,7 @@ function Addnewdoctor() {
             <input type="text" value={salary} onChange={(e)=>setSalary(e.target.value)}   placeholder="enter salary"/>
             <button type='submit'>Add Doctor</button>
         </form>
-        <Home/> 
+        <Home newdoctor={newdoctor}/> 
     </div>
   )
 }
