@@ -9,6 +9,11 @@ entire process is called reconcialiation
 2) component based architecture
 3) single page application
 
+component- a reusable part of UI 
+two types
+1) functional components - hooks
+2) class components- life cycle methods
+
 
 props
 props are read only inputs which is used to pass the data to the child
