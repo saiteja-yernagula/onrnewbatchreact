@@ -1,6 +1,6 @@
-
-function Doctorcard({name,specialization,gender}) {
-   
+import { useNavigate } from "react-router-dom"
+function Doctorcard({name,specialization,gender,id}) {
+   let navigate=useNavigate()
   return (
     <div className="card">
         <div> <img
@@ -9,9 +9,8 @@ function Doctorcard({name,specialization,gender}) {
         <h1>{name}</h1>
         <p>{specialization}</p>
         <p>{gender}</p>
-        <button>View details</button>
+        <button onClick={()=>navigate(`/${id}`)}>View details</button>
     </div>
   )
 }
-
 export default Doctorcard

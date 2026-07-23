@@ -72,3 +72,19 @@ it is used to render the ui elements
 
 key
 it is used to provide unique identity for every rendered UI element
+
+
+react router dom
+it is used for navigation to multiple components
+it is used for routing
+
+browseerrouter---routes---route 
+
+useNavigate()
+it is react router dom hook that is used for programmatical routing
+
+payemnt-------after few seconds----orderplaced
+
+
+useParams()
+it is used to get the dynamic data from the url
