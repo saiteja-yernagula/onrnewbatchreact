@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Doctorcard from "./Doctorcard";
-function Home({ newdoctor }) {
+function Home({ newdoctor,deldata }) {
   let [doctors, setDoctors] = useState([]);
 
   let [search, setSearch] = useState("");
@@ -58,6 +58,7 @@ function Home({ newdoctor }) {
                 gender={doctor.gender}
                 specialization={doctor.specialization}
                 id={doctor.id}
+                deldata={deldata}
               />
             );
           })

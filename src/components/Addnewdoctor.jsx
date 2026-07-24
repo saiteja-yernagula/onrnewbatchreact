@@ -22,6 +22,11 @@ function Addnewdoctor() {
         setAge('')
         setSalary('')
     }
+
+    async function deldata(id){
+        await axios.delete(`https://doc-back.onrender.com/doctors/${id}`)
+        alert('deleted')
+        setNewdoctor('deleted')  }
   return (
     <div>
         <h1>Add New Doctor</h1>
@@ -38,7 +43,7 @@ function Addnewdoctor() {
             <input type="text" value={salary} onChange={(e)=>setSalary(e.target.value)}   placeholder="enter salary"/>
             <button type='submit'>Add Doctor</button>
         </form>
-        <Home newdoctor={newdoctor}/> 
+        <Home deldata={deldata} newdoctor={newdoctor}/> 
     </div>
   )
 }

@@ -118,3 +118,11 @@ async function postdata(){
 }
 
 
+import axios from 'axios'
+
+async function deldata(id){
+        await axios.delete(`url/${id}`)
+        alert('deleted')
+}
+
+
