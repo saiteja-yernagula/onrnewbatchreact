@@ -126,3 +126,10 @@ async function deldata(id){
 }
 
 
+import axios from 'axios'
+
+async function updatedata(id){
+        await axios.put(`url/${id}`,newupdateddata)
+        alert('updated')
+        setNewdoctor('data updated')
+}
