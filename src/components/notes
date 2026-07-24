@@ -88,3 +88,33 @@ payemnt-------after few seconds----orderplaced
 
 useParams()
 it is used to get the dynamic data from the url
+
+
+fetch is used to make a api request but increase the code
+
+axios is a libarary that is used to simply api calls
+
+npm install axios
+
+import {useState,useEffect} from 'react';
+import axios from 'axios';
+
+const [doctors,setDoctors]=useState([])
+async function fetchdata(){
+        let response=await axios.get('https://doc-back.onrender.com/doctors')
+        setDoctors(response.data)
+        console.log(response.data)
+}
+useEffect(()=>{
+ fetchdata()
+},[])
+
+
+import axios from 'axios'
+
+async function postdata(){
+        await axios.post('url',newdata)
+        alert('data posted')
+}
+
+
